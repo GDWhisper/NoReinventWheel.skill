@@ -245,8 +245,8 @@ NoReinventWheel/
 │   ├── github-search.mjs
 │   └── repo-detail.mjs
 ├── _meta.json                # Project metadata
-├── README.md                 # Chinese documentation
-├── README_EN.md              # English documentation
+├── README.md                 # English documentation
+├── README_zh.md             # Chinese documentation
 └── release_script.py         # Release script
 ```
 
