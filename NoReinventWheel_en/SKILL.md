@@ -6,6 +6,7 @@ metadata:
     emoji: "🐙"
     category: "research"
     tags: ["github", "opensource", "research", "reuse", "contribution"]
+invoke: /no-reinvent-wheel
 ---
 
 # No Reinvent the Wheel 🐙
