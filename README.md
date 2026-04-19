@@ -1,180 +1,207 @@
-# NoReinventWheel 🐙 别重复造轮子.skill
+# NoReinventWheel.skill
 
-<div align="center">
+## Stop reinventing the wheel — Focus on truly valuable innovation
 
-**停止重复造轮子，专注于真正有价值的创新**
-
-[English](./README_EN.md) | [简体中文](./README.md)
-
-</div>
+[🇨🇳 简体中文](./README_zh.md)
 
 ---
 
-## 💡 核心理念
+## 📋 Table of Contents
 
-> AI时代让造轮子变得触手可及，却也催生了无数同质化的重复项目。请冷静下来，停止浪费你的Token！当灵感闪现时，不妨先去GitHub搜一搜，看看是否已经有契合你想法的开源项目。遇见相似项目，我们应该去参与和完善它，而不是重复制造仿品——除非你们的设计理念有着本质的不同。
-
----
-
-## 🎯 这是什么？
-
-NoReinventWheel 是一个 **AI 助手技能（Skill）**，旨在帮助开发者在开始新项目前，先搜索 GitHub 上已有的成熟开源方案，避免重复劳动，提高开发效率。
-
-### 主要功能
-
-- 🔍 **智能搜索**：自动搜索 GitHub 上的相关开源项目
-- 📊 **结果分析**：评估项目的匹配度、活跃度、社区支持
-- 💡 **决策建议**：推荐复用、改造或自建的最佳路径
-- 🌐 **双语支持**：完整的中英文文档和输出
+- [💡 Core Philosophy](#-core-philosophy)
+- [🎯 What is this?](#-what-is-this)
+- [🚀 Quick Start](#-quick-start)
+- [📖 Usage](#-usage)
+- [🤖 AI Integration](#-ai-integration--how-it-works)
+- [📦 Package Structure](#-package-structure)
+- [🔧 Tech Stack](#-tech-stack)
+- [🌟 Why Choose NoReinventWheel?](#-why-choose-noreinventwheel)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
 
 ---
 
-## 🚀 快速开始
+## 💡 Core Philosophy
 
-### 安装
+> [!IMPORTANT]
+> The AI era has made reinventing the wheel effortless, leading to a flood of duplicate projects. Take a step back and stop wasting your tokens!
 
-从 [Release](https://github.com/GDWhisper/NoReinventWheel.skill/releases) 下载最新版本的技能包：
+Before acting on a flash of inspiration, check GitHub first to see if an open-source project already aligns with your idea. Instead of creating copycats, we should contribute to and improve existing projects—unless your design philosophy is fundamentally different.
 
-- **中文版**：`NoReinventWheel_zh.skill`
-- **英文版**：`NoReinventWheel_en.skill`
+---
 
-解压后将 `no-reinvent-wheel` 文件夹放入 Claude Skills 目录：
+## 🎯 What is this?
+
+NoReinventWheel is an **AI Assistant Skill** designed to help developers search for mature open-source solutions on GitHub before starting new projects, avoiding redundant work and improving development efficiency.
+
+### Key Features
+
+| Feature | Description |
+|---------|-------------|
+| 🔍 **Smart Search** | Automatically search for related open-source projects on GitHub |
+| 📊 **Result Analysis** | Evaluate project match level, activity, and community support |
+| 💡 **Decision Guidance** | Recommend the best path: reuse, modify, or build from scratch |
+| 🌐 **Bilingual Support** | Complete documentation and output in both Chinese and English |
+
+---
+
+## 🚀 Quick Start
+
+### Installation
+
+Download the latest skill package from [Release](https://github.com/GDWhisper/NoReinventWheel.skill/releases):
+
+| Version | File |
+|---------|------|
+| 🇨🇳 Chinese | `NoReinventWheel_zh.skill` |
+| 🇺🇸 English | `NoReinventWheel_en.skill` |
+
+Extract the archive and place the `no-reinvent-wheel` folder into the Claude Skills directory:
 
 ```bash
 # Windows
-C:\Users\<你的用户名>\.claude\skills\no-reinvent-wheel
+C:\Users\<YourUsername>\.claude\skills\no-reinvent-wheel
 
 # macOS/Linux
 ~/.claude/skills/no-reinvent-wheel
 ```
 
-### 配置 GitHub Token（推荐）
+### Configure GitHub Token (Recommended)
 
-为了提高 API 调用限制，建议配置个人访问令牌：
+> [!TIP]
+> To increase API rate limits, configure a personal access token:
 
 ```bash
 export GITHUB_TOKEN="ghp_your_token_here"
 ```
 
-未认证请求限制为 **60次/小时**，认证后可提升至 **5000次/小时**。
+| Rate Limit | Requests/hour |
+|------------|---------------|
+| ⬛ Unauthenticated | 60 |
+| ✅ Authenticated | 5,000 |
 
 ---
 
-## 📖 使用方法
+## 📖 Usage
 
-### 基本使用
+### Basic Usage
 
-直接在 Claude 中表达开发意图即可触发搜索：
+Simply express your development intent in Claude to trigger the search:
 
-- "我想开发一个..."
-- "我想做一个...项目"
-- "有没有类似的..."
-- 直接调用 `/no-reinvent-wheel` 或 `/wheel`
+- "I want to develop..."
+- "I want to build a... project"
+- "Any similar projects?"
+- Directly invoke `/no-reinvent-wheel` or `/wheel`
 
-### 使用示例
+### Usage Example
 
-**输入：**
-```
-我想开发一个Windows缓存自动清理工具
-```
+> **Input:**
+> ```
+> I want to develop a Windows cache auto-cleanup tool
+> ```
 
-**输出：**
-```
-GitHub 上已有成熟的类似项目，先给你汇报一下：
-
-🐙 调研结果
-
-| 项目 | Stars | 语言 | 定位 |
-|------|-------|------|------|
-| BleachBit | 4.7k | Python | 成熟开源软件，Windows/Linux 全平台，功能最全 |
-| Winapp2 | 905 | VB.NET | 清洗规则数据库，为 CCleaner/BleachBit 提供扩展定义 |
-| WindowsCleanerUtility | 105 | Batch | 极简批处理脚本，清理临时文件 |
-
-💡 我的判断
-
-BleachBit 已经是成熟开源标杆，如果你想做一个通用的"Windows 缓存清理工具"，它基本覆盖了所有主流场景。
-```
+> **Output:**
+> ```
+> There are already mature similar projects on GitHub. Here's the research report:
+>
+> 🐙 Research Results
+>
+> | Project | Stars | Language | Positioning |
+> |---------|-------|----------|-------------|
+> | BleachBit | 4.7k | Python | Mature open-source software, cross-platform for Windows/Linux, most comprehensive features |
+> | Winapp2 | 905 | VB.NET | Cleaning rules database, provides extension definitions for CCleaner/BleachBit |
+> | WindowsCleanerUtility | 105 | Batch | Minimalist batch script for cleaning temporary files |
+>
+> 💡 My Judgment
+>
+> BleachBit is already a mature open-source benchmark. If you want to build a general-purpose
+> "Windows cache cleanup tool", it basically covers all mainstream scenarios.
+> ```
 
 ---
 
-## 🤖 AI 集成与工作原理
+## 🤖 AI Integration & How It Works
 
-### 触发场景
+### Trigger Scenarios
 
-当用户表达以下意图时，自动触发搜索：
+Automatically trigger search when users express these intents:
 
-- "我想做一个..."
-- "我要开发..."
-- "有没有类似的..."
-- 直接调用 `/no-reinvent-wheel` 或 `/wheel`
+- "I want to build..."
+- "I'm developing..."
+- "Any similar projects?"
+- Directly invoke `/no-reinvent-wheel` or `/wheel`
 
-### 强触发词（立即拦截）
+### Strong Trigger Words (Intercept Immediately)
 
-看到这些词时，代表用户明确表达了"我要从零造一个完整的东西"的意图：
+<details>
+<summary>These words indicate the user explicitly intends to "build a complete thing from scratch":</summary>
 
-#### "从零/手写/自己实现"系列
-- "帮我**从零**写一个……"
-- "不用第三方库，**纯手写**一个……"
-- "我不想依赖外部包，**自己实现**一个……"
+#### "From scratch / Hand-write / Implement myself" Series
+- "Help me write a... **from scratch**"
+- "No third-party libraries, **hand-write** a..."
+- "I don't want external dependencies, **implement my own**..."
 
-#### "项目/模块/系统"系列
-- "帮我创建一个**项目**，实现……"
-- "写一个完整的**模块**，用于……"
-- "设计一个**系统**，能够……"
+#### "Project / Module / System" Series
+- "Help me **create a project** that implements..."
+- "Write a complete **module** for..."
+- "Design a **system** that can..."
 
-#### "我想做/准备做"系列
-- "我有个点子，我想做一个……"
-- "我准备开发一个……"
+#### "I want to / I'm going to" Series
+- "I have an idea, I want to build a..."
+- "I'm going to develop a..."
+</details>
 
-### 高频轮子重灾区
+### High-Frequency Wheel-Making Areas
 
-用户的指令中同时包含"写代码的动作" + "以下高频轮子领域"时触发：
+Trigger when user's instruction contains "code-writing action" + "one of these high-frequency areas":
 
-- **认证权限类**：登录/注册/鉴权/JWT/权限管理/OAuth
-- **数据解析类**：爬虫/解析器/导出Excel/读取PDF/解析XML
-- **基础基建类**：聊天室/WebSocket/定时任务/队列/日志系统
-- **常见业务类**：购物车/支付接口/分页组件/富文本编辑器/文件上传
-- **算法工具类**：日历控件/倒计时/加密解密/图片压缩
+| Category | Keywords |
+|----------|----------|
+| **Auth & Permissions** | login/register/auth/JWT/permission/OAuth |
+| **Data Parsing** | crawler/parser/export Excel/read PDF/parse XML |
+| **Infrastructure** | chat room/WebSocket/cron job/queue/logging system |
+| **Common Business** | shopping cart/payment API/pagination component/rich text editor/file upload |
+| **Algorithm Utils** | calendar/countdown/encryption/image compression |
 
-### 不触发的场景
+### When NOT to Trigger
 
-以下情况请不要触发（正常回答）：
+Do NOT trigger (answer normally) in these cases:
 
-- ✅ 用户明确说"为了学习/教学"
-- ✅ 用户只是在问一个函数的写法和参数
-- ✅ 用户在调试/修复现有代码的 Bug
-- ✅ 用户问的是正则、具体算法逻辑等非常细粒度的问题
-- ✅ 用户的"写"是在现有代码基础上改，而不是从零生成
+- ✅ User explicitly says "for learning/teaching purposes"
+- ✅ User is just asking about a function's usage and parameters
+- ✅ User is debugging/fixing a Bug in existing code
+- ✅ User is asking about regex, specific algorithm logic, or other very granular questions
+- ✅ User's "write" is modifying existing code, not generating from scratch
 
-### 工作流程
+### Workflow
 
 ```
 graph TD
-    A[用户提出需求] --> B{识别意图}
-    B -->|需要完整功能| C[触发搜索]
-    B -->|学习/调试/细粒度| D[直接回答]
-    C --> E[执行 GitHub 搜索]
-    E --> F[分析搜索结果]
-    F --> G{匹配度评估}
-    G -->|✅ 完全匹配| H[建议直接使用/Fork]
-    G -->|🔧 部分匹配| I[建议基于此改造]
-    G -->|📝 参考价值| J[仅作学习参考]
-    G -->|❌ 无合适项目| K[确认是否自建]
-    H --> L[结束]
+    A[User Request] --> B{Identify Intent}
+    B -->|Complete Functionality Needed| C[Trigger Search]
+    B -->|Learning/Debugging/Granular| D[Answer Directly]
+    C --> E[Execute GitHub Search]
+    E --> F[Analyze Search Results]
+    F --> G{Match Level Assessment}
+    G -->|✅ Full Match| H[Recommend Use/Fork]
+    G -->|🔧 Partial Match| I[Recommend Build on Top]
+    G -->|📝 Reference Value| J[Learning Reference Only]
+    G -->|❌ No Suitable Projects| K[Confirm Build from Scratch]
+    H --> L[End]
     I --> L
     J --> L
     K --> L
 ```
 
-### 输出格式
+### Output Format
 
-脚本返回统一的 JSON 结构：
+Scripts return a unified JSON structure:
 
 ```json
 {
-  "lang": "zh",
+  "lang": "en",
   "status": "ok",
-  "query": "番茄钟",
+  "query": "pomodoro timer",
   "total_count": 1234,
   "returned_count": 10,
   "items": [
@@ -195,85 +222,84 @@ graph TD
 }
 ```
 
-**AI 展示规则：**
-- `lang: "en"` → AI 负责翻译成用户语言再展示
-- 日期字段 `pushed_days_ago` → AI 转换成 "3天前" 或 "3 days ago"
-- 数字字段 `stars: 12300` → AI 格式化 "12.3k"
-- 错误时 `status: "error"` → AI 根据 `code` 和 `message` 生成友好的错误提示
+**AI Display Rules:**
 
-
----
-
-## 🌟 为什么选择 NoReinventWheel？
-
-### 对开发者的价值
-
-1. **节省时间**：避免重复造轮子，快速找到成熟方案
-2. **提高质量**：使用经过社区验证的稳定项目
-3. **促进协作**：鼓励贡献而非复制，推动开源生态发展
-4. **减少浪费**：节约 AI Token 和开发资源
-
-### 对开源社区的贡献
-
-- 🔄 减少同质化项目泛滥
-- 🤝 鼓励开发者参与现有项目
-- 📈 提升优质项目的曝光度
-- 💪 构建更健康的开源生态
-
+| Field | Rule |
+|-------|------|
+| `lang: "en"` | AI translates to user's language before displaying |
+| `pushed_days_ago: 3` | AI converts to "3 days ago" or localized format |
+| `stars: 12300` | AI formats as "12.3k" |
+| `status: "error"` | AI generates a friendly error message from `code` and `message` |
 
 ---
 
-## 📦 项目结构
+## 📦 Package Structure
 
 ```
 NoReinventWheel/
-├── NoReinventWheel_zh/       # 中文版本
-│   └── SKILL.md              # 技能定义（中文）
-├── NoReinventWheel_en/       # 英文版本
-│   └── SKILL.md              # 技能定义（英文）
-├── scripts/                  # 共享脚本
+├── NoReinventWheel_zh/       # Chinese version
+│   └── SKILL.md              # Skill definition (Chinese)
+├── NoReinventWheel_en/       # English version
+│   └── SKILL.md              # Skill definition (English)
+├── scripts/                  # Shared scripts
 │   ├── github-search.mjs
 │   └── repo-detail.mjs
-├── _meta.json                # 项目元数据
-├── README.md                 # 中文文档
-├── README_EN.md              # 英文文档
-└── release_script.py         # 发布脚本
+├── _meta.json                # Project metadata
+├── README.md                 # Chinese documentation
+├── README_EN.md              # English documentation
+└── release_script.py         # Release script
 ```
 
 ---
 
-## 🔧 技术栈
+## 🔧 Tech Stack
 
-- **语言**：JavaScript (ES Modules)
-- **API**：GitHub Search API v3, GitHub REST API
-- **运行时**：Node.js
-
----
-
-## 🤝 贡献指南
-
-我们欢迎所有形式的贡献！
-
-### 贡献方向
-
-- 🐛 修复 Bug
-- ✨ 添加新功能
-- 📝 完善文档
-- 🌍 改进翻译
+| Component | Technology |
+|-----------|------------|
+| Language | JavaScript (ES Modules) |
+| API | GitHub Search API v3, GitHub REST API |
+| Runtime | Node.js |
 
 ---
 
-## 📄 许可证
+## 🌟 Why Choose NoReinventWheel?
 
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情
+### Value for Developers
+
+| Benefit | Description |
+|---------|-------------|
+| ⏱️ **Save Time** | Avoid reinventing the wheel, quickly find mature solutions |
+| ✅ **Improve Quality** | Use stable projects validated by the community |
+| 🤝 **Promote Collaboration** | Encourage contribution over copying, drive open-source ecosystem growth |
+| 💰 **Reduce Waste** | Save AI tokens and development resources |
+
+### Contribution to Open Source Community
+
+- 🔄 Reduce the proliferation of homogeneous projects
+- 🤝 Encourage developers to participate in existing projects
+- 📈 Increase visibility of high-quality projects
+- 💪 Build a healthier open-source ecosystem
 
 ---
 
-## 🙏 致谢
+## 🤝 Contributing
 
-- 感谢所有开源项目的维护者
-- 感谢 GitHub 提供的强大 API
-- 感谢每一位参与贡献的开发者
+We welcome contributions of all kinds!
+
+### Contribution Areas
+
+| Area | Description |
+|------|-------------|
+| 🐛 Bug fixes | Fix issues and improve stability |
+| ✨ New features | Add new capabilities |
+| 📝 Documentation | Improve docs and examples |
+| 🌍 Translation | Enhance bilingual support |
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details
 
 ---
 
@@ -281,6 +307,6 @@ NoReinventWheel/
 
 **Made with ❤️ by the NoReinventWheel Team**
 
-⭐ 如果这个项目对你有帮助，请给我们一个 Star！
+⭐ If this project helps you, please give us a star!
 
 </div>
