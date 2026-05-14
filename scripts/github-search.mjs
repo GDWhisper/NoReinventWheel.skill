@@ -68,7 +68,7 @@ async function searchGitHub(query, sort, order, perPage = 30) {
   const url = `${GITHUB_API}?q=${encodeURIComponent(query)}&sort=${sort}&order=${order}&per_page=${perPage}`;
   const headers = [
     '-H "Accept: application/vnd.github.v3+json"',
-    '-H "User-Agent: NoReinventWheel-Skill"'
+    '-H "User-Agent: ForkIt-Skill"'
   ];
   if (process.env.GITHUB_TOKEN) {
     headers.push(`-H "Authorization: token ${process.env.GITHUB_TOKEN}"`);

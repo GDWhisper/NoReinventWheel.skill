@@ -17,7 +17,7 @@ async function apiGet(path) {
   const url = `${GITHUB_API}${path}`;
   const headers = [
     '-H "Accept: application/vnd.github.v3+json"',
-    '-H "User-Agent: NoReinventWheel-Skill"'
+    '-H "User-Agent: ForkIt-Skill"'
   ];
   if (process.env.GITHUB_TOKEN) {
     headers.push(`-H "Authorization: token ${process.env.GITHUB_TOKEN}"`);

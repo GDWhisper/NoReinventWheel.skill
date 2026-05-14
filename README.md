@@ -1,6 +1,6 @@
-# NoReinventWheel.skill
+# Fork-It.skill
 
-## Stop reinventing the wheel — Focus on truly valuable innovation
+## Find it. Fork it. Make it yours.
 
 [🇨🇳 简体中文](./README_zh.md)
 
@@ -12,10 +12,10 @@
 - [🎯 What is this?](#-what-is-this)
 - [🚀 Quick Start](#-quick-start)
 - [📖 Usage](#-usage)
-- [🤖 AI Integration](#-ai-integration--how-it-works)
+- [🤖 How It Works](#-how-it-works)
 - [📦 Package Structure](#-package-structure)
 - [🔧 Tech Stack](#-tech-stack)
-- [🌟 Why Choose NoReinventWheel?](#-why-choose-noreinventwheel)
+- [🌟 Why Fork-It?](#-why-fork-it)
 - [🤝 Contributing](#-contributing)
 - [📄 License](#-license)
 
@@ -24,24 +24,25 @@
 ## 💡 Core Philosophy
 
 > [!IMPORTANT]
-> The AI era has made reinventing the wheel effortless, leading to a flood of duplicate projects. Take a step back and stop wasting your tokens!
+> Every great project starts somewhere. Why start from zero when you can start from 80%?
 
-Before acting on a flash of inspiration, check GitHub first to see if an open-source project already aligns with your idea. Instead of creating copycats, we should contribute to and improve existing projects—unless your design philosophy is fundamentally different.
+Got an idea? Before you type a single line of code, search GitHub first. There's probably a project that already does a big chunk of what you want. **Fork it.** Now it's yours. Tear it apart, reshape it, inject your own ideas — no PRs, no waiting, no asking permission. That's the beauty of open source.
+
+You're not "reinventing the wheel." You're standing on it to reach higher.
 
 ---
 
 ## 🎯 What is this?
 
-NoReinventWheel is an **AI Assistant Skill** designed to help developers search for mature open-source solutions on GitHub before starting new projects, avoiding redundant work and improving development efficiency.
+Fork-It is an **AI Assistant Skill** that helps you discover the best open-source starting points on GitHub — projects you can fork then customize into your own vision.
 
-### Key Features
+### What It Does
 
-| Feature | Description |
-|---------|-------------|
-| 🔍 **Smart Search** | Automatically search for related open-source projects on GitHub |
-| 📊 **Result Analysis** | Evaluate project match level, activity, and community support |
-| 💡 **Decision Guidance** | Recommend the best path: reuse, modify, or build from scratch |
-| 🌐 **Bilingual Support** | Complete documentation and output in both Chinese and English |
+| Step | Description |
+|------|-------------|
+| 🔍 **Search** | Finds the most relevant open-source projects for your idea |
+| 📊 **Analyze** | Checks activity, community health, and how close the match is |
+| 🚀 **Fork & Go** | Points you to the best fork-worthy candidates, no strings attached |
 
 ---
 
@@ -49,27 +50,27 @@ NoReinventWheel is an **AI Assistant Skill** designed to help developers search 
 
 ### Installation
 
-Download the latest skill package from [Release](https://github.com/GDWhisper/NoReinventWheel.skill/releases):
+Download the latest skill package from [Release](https://github.com/GDWhisper/Fork-It.skill/releases):
 
 | Version | File |
 |---------|------|
-| 🇨🇳 Chinese | `NoReinventWheel_zh.skill` |
-| 🇺🇸 English | `NoReinventWheel_en.skill` |
+| 🇨🇳 Chinese | `Fork-It_zh.skill` |
+| 🇺🇸 English | `Fork-It_en.skill` |
 
-Extract the archive and place the `no-reinvent-wheel` folder into the Claude Skills directory:
+Extract and place the `fork-it` folder into the Claude Skills directory:
 
 ```bash
 # Windows
-C:\Users\<YourUsername>\.claude\skills\no-reinvent-wheel
+C:\Users\<YourUsername>\.claude\skills\fork-it
 
 # macOS/Linux
-~/.claude/skills/no-reinvent-wheel
+~/.claude/skills/fork-it
 ```
 
 ### Configure GitHub Token (Recommended)
 
 > [!TIP]
-> To increase API rate limits, configure a personal access token:
+> A personal access token gives you 5,000 requests/hour instead of 60:
 
 ```bash
 export GITHUB_TOKEN="ghp_your_token_here"
@@ -84,114 +85,80 @@ export GITHUB_TOKEN="ghp_your_token_here"
 
 ## 📖 Usage
 
-### Basic Usage
+### How to Trigger
 
-Simply express your development intent in Claude to trigger the search:
+Just talk about your idea in Claude. Fork-It picks up on it naturally:
 
-- "I want to develop..."
-- "I want to build a... project"
-- "Any similar projects?"
-- Directly invoke `/no-reinvent-wheel` or `/wheel`
+- "I want to build a..."
+- "I'm thinking of making..."
+- "Has anyone built something like..."
+- Or invoke directly: `/fork-it`
 
-### Usage Example
+### Example
 
 > **Input:**
 > ```
-> I want to develop a Windows cache auto-cleanup tool
+> I want to build a Windows cache auto-cleanup tool
 > ```
 
 > **Output:**
 > ```
-> There are already mature similar projects on GitHub. Here's the research report:
+> Here are some solid starting points you can fork and make your own:
 >
-> 🐙 Research Results
+> 🐙 Results
 >
-> | Project | Stars | Language | Positioning |
-> |---------|-------|----------|-------------|
-> | BleachBit | 4.7k | Python | Mature open-source software, cross-platform for Windows/Linux, most comprehensive features |
-> | Winapp2 | 905 | VB.NET | Cleaning rules database, provides extension definitions for CCleaner/BleachBit |
-> | WindowsCleanerUtility | 105 | Batch | Minimalist batch script for cleaning temporary files |
+> | Project | Stars | Language | What It Gives You |
+> |---------|-------|----------|-------------------|
+> | BleachBit | 4.7k | Python | Full-featured cross-platform cleaner, fork it and add your own rules |
+> | Winapp2 | 905 | VB.NET | Rich cleaning rules database, fork it as your rule engine |
+> | WindowsCleanerUtility | 105 | Batch | Minimal script, fork it if you want a lightweight starting point |
 >
-> 💡 My Judgment
->
-> BleachBit is already a mature open-source benchmark. If you want to build a general-purpose
-> "Windows cache cleanup tool", it basically covers all mainstream scenarios.
+> 💡 BleachBit gives you the most complete foundation. Fork it, strip what you
+> don't need, and build your own cleaner on top.
 > ```
 
 ---
 
-## 🤖 AI Integration & How It Works
+## 🤖 How It Works
 
-### Trigger Scenarios
+### When Fork-It Chimes In
 
-Automatically trigger search when users express these intents:
+When you're forming a new project idea — not when you're fixing bugs, learning, or asking about specific functions.
 
-- "I want to build..."
-- "I'm developing..."
-- "Any similar projects?"
-- Directly invoke `/no-reinvent-wheel` or `/wheel`
+**Good candidates for Fork-It:**
+- "I want to build a chat app..."
+- "I want to create a markdown editor..."
+- "I want to make a cron job scheduler..."
 
-### Strong Trigger Words (Intercept Immediately)
-
-<details>
-<summary>These words indicate the user explicitly intends to "build a complete thing from scratch":</summary>
-
-#### "From scratch / Hand-write / Implement myself" Series
-- "Help me write a... **from scratch**"
-- "No third-party libraries, **hand-write** a..."
-- "I don't want external dependencies, **implement my own**..."
-
-#### "Project / Module / System" Series
-- "Help me **create a project** that implements..."
-- "Write a complete **module** for..."
-- "Design a **system** that can..."
-
-#### "I want to / I'm going to" Series
-- "I have an idea, I want to build a..."
-- "I'm going to develop a..."
-</details>
-
-### High-Frequency Wheel-Making Areas
-
-Trigger when user's instruction contains "code-writing action" + "one of these high-frequency areas":
-
-| Category | Keywords |
-|----------|----------|
-| **Auth & Permissions** | login/register/auth/JWT/permission/OAuth |
-| **Data Parsing** | crawler/parser/export Excel/read PDF/parse XML |
-| **Infrastructure** | chat room/WebSocket/cron job/queue/logging system |
-| **Common Business** | shopping cart/payment API/pagination component/rich text editor/file upload |
-| **Algorithm Utils** | calendar/countdown/encryption/image compression |
-
-### When NOT to Trigger
-
-Do NOT trigger (answer normally) in these cases:
-
-- ✅ User explicitly says "for learning/teaching purposes"
-- ✅ User is just asking about a function's usage and parameters
-- ✅ User is debugging/fixing a Bug in existing code
-- ✅ User is asking about regex, specific algorithm logic, or other very granular questions
-- ✅ User's "write" is modifying existing code, not generating from scratch
+**Fork-It stays quiet when:**
+- You're debugging existing code
+- You're learning how something works
+- You're asking about a specific algorithm or regex
+- You're modifying an existing project
 
 ### Workflow
 
 ```
 graph TD
-    A[User Request] --> B{Identify Intent}
-    B -->|Complete Functionality Needed| C[Trigger Search]
-    B -->|Learning/Debugging/Granular| D[Answer Directly]
-    C --> E[Execute GitHub Search]
-    E --> F[Analyze Search Results]
-    F --> G{Match Level Assessment}
-    G -->|✅ Full Match| H[Recommend Use/Fork]
-    G -->|🔧 Partial Match| I[Recommend Build on Top]
-    G -->|📝 Reference Value| J[Learning Reference Only]
-    G -->|❌ No Suitable Projects| K[Confirm Build from Scratch]
-    H --> L[End]
-    I --> L
-    J --> L
-    K --> L
+    A[You Have an Idea] --> B{Fork-It Checks}
+    B -->|New Project Idea| C[Search GitHub]
+    B -->|Debug / Learn / Tweak| D[Carry On]
+    C --> E[Find Best Matches]
+    E --> F{How Close Is the Match?}
+    F -->|Great Match 🎯| G[Fork It & Customize]
+    F -->|Partial Match 🔧| H[Fork It & Extend]
+    F -->|Reference Only 📝| I[Study It, Then Build]
+    F -->|Nothing Fits ✨| J[Build Fresh — Go For It]
 ```
+
+### Decision Guide
+
+| Match | Path | What This Means |
+|-------|------|-----------------|
+| 🎯 Great | **Fork & Customize** | The project does most of what you need. Fork it, tweak it, ship it. |
+| 🔧 Partial | **Fork & Extend** | Core is solid but missing your feature. Fork it and add your piece. |
+| 📝 Reference | **Learn, Then Build** | Different enough that forking isn't the shortcut. Study the approach. |
+| ✨ None | **Build Fresh** | You're doing something new. Go build it — and consider open-sourcing it! |
 
 ### Output Format
 
@@ -236,10 +203,10 @@ Scripts return a unified JSON structure:
 ## 📦 Package Structure
 
 ```
-NoReinventWheel/
-├── NoReinventWheel_zh/       # Chinese version
+Fork-It/
+├── Fork-It_zh/                # Chinese version
 │   └── SKILL.md              # Skill definition (Chinese)
-├── NoReinventWheel_en/       # English version
+├── Fork-It_en/                # English version
 │   └── SKILL.md              # Skill definition (English)
 ├── scripts/                  # Shared scripts
 │   ├── github-search.mjs
@@ -262,31 +229,20 @@ NoReinventWheel/
 
 ---
 
-## 🌟 Why Choose NoReinventWheel?
-
-### Value for Developers
+## 🌟 Why Fork-It?
 
 | Benefit | Description |
 |---------|-------------|
-| ⏱️ **Save Time** | Avoid reinventing the wheel, quickly find mature solutions |
-| ✅ **Improve Quality** | Use stable projects validated by the community |
-| 🤝 **Promote Collaboration** | Encourage contribution over copying, drive open-source ecosystem growth |
-| 💰 **Reduce Waste** | Save AI tokens and development resources |
-
-### Contribution to Open Source Community
-
-- 🔄 Reduce the proliferation of homogeneous projects
-- 🤝 Encourage developers to participate in existing projects
-- 📈 Increase visibility of high-quality projects
-- 💪 Build a healthier open-source ecosystem
+| 🏃 **Jump Start** | Start from a working codebase instead of a blank file |
+| 🎨 **Full Creative Control** | Fork it and it's yours — no PRs, no waiting, no gatekeepers |
+| 👀 **Learn by Reading** | Even if you don't fork, studying real projects teaches you fast |
+| ⚡ **Ship Faster** | Spend time on YOUR ideas, not on boilerplate someone already wrote |
 
 ---
 
 ## 🤝 Contributing
 
-We welcome contributions of all kinds!
-
-### Contribution Areas
+We welcome contributions of all kinds:
 
 | Area | Description |
 |------|-------------|
@@ -305,8 +261,8 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 <div align="center">
 
-**Made with ❤️ by the NoReinventWheel Team**
+**Made with ❤️ by the Fork-It Team**
 
-⭐ If this project helps you, please give us a star!
+⭐ If Fork-It helps you launch faster, give us a star!
 
 </div>
