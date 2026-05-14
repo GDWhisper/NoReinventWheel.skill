@@ -85,10 +85,10 @@ def main():
             print("✓ 清理完成\n")
 
         # 生成中文版本
-        zh_path = create_skill_package('zh', 'ForkIt_zh')
+        zh_path = create_skill_package('zh', 'Fork-It_zh')
 
         # 生成英文版本
-        en_path = create_skill_package('en', 'ForkIt_en')
+        en_path = create_skill_package('en', 'Fork-It_en')
 
         # 输出总结
         print("=" * 60)
